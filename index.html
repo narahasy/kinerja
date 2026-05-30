@@ -1262,6 +1262,259 @@
             opacity: 1;
             transform: translateY(0);
         }
+
+        /* ===== HUB DASHBOARD ===== */
+        .hub-page {
+            min-height: calc(100vh - 70px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 1.5rem 4rem;
+            background: linear-gradient(160deg, #022c22 0%, #064e3b 55%, #065f46 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hub-page::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(rgba(52,211,153,.045) 1px, transparent 1px);
+            background-size: 30px 30px;
+            pointer-events: none;
+        }
+
+        .hub-blob {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+        }
+
+        .hub-blob-1 {
+            width: 550px; height: 550px;
+            top: -180px; right: -100px;
+            background: radial-gradient(circle, rgba(52,211,153,.18), transparent 65%);
+            animation: float1 14s ease-in-out infinite alternate;
+        }
+
+        .hub-blob-2 {
+            width: 400px; height: 400px;
+            bottom: -100px; left: -80px;
+            background: radial-gradient(circle, rgba(245,158,11,.12), transparent 65%);
+            animation: float2 10s ease-in-out infinite alternate;
+        }
+
+        .hub-blob-3 {
+            width: 300px; height: 300px;
+            bottom: 30%; right: 10%;
+            background: radial-gradient(circle, rgba(167,139,250,.1), transparent 65%);
+            animation: float1 12s ease-in-out infinite alternate-reverse;
+        }
+
+        .hub-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hub-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            background: rgba(52,211,153,.12);
+            border: 1px solid rgba(52,211,153,.28);
+            color: #a7f3d0;
+            font-size: .78rem;
+            font-weight: 700;
+            padding: .38rem 1.1rem;
+            border-radius: 50px;
+            margin-bottom: 1.2rem;
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+
+        .hub-badge i { font-size: .55rem; animation: kedip 2s infinite; }
+
+        .hub-title {
+            font-size: clamp(2.2rem, 5vw, 3.4rem);
+            font-weight: 800;
+            color: #fff;
+            line-height: 1.12;
+            letter-spacing: -0.025em;
+            margin-bottom: .85rem;
+        }
+
+        .hub-title em {
+            color: #a7f3d0;
+            font-style: normal;
+        }
+
+        .hub-sub {
+            color: rgba(255,255,255,.65);
+            font-size: .95rem;
+            max-width: 520px;
+            margin: 0 auto;
+            line-height: 1.75;
+        }
+
+        /* --- 4 Card Grid --- */
+        .hub-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1.4rem;
+            max-width: 1100px;
+            width: 100%;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hub-kartu {
+            border-radius: 26px;
+            padding: 2.4rem 1.6rem 2rem;
+            text-align: center;
+            text-decoration: none;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+            transition: all 0.38s cubic-bezier(0.34,1.56,0.64,1);
+            position: relative;
+            overflow: hidden;
+            border: 1px solid rgba(255,255,255,.08);
+        }
+
+        .hub-kartu::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            border-radius: 26px;
+            background: linear-gradient(180deg, rgba(255,255,255,.06) 0%, rgba(255,255,255,0) 100%);
+            pointer-events: none;
+        }
+
+        .hub-kartu:hover {
+            transform: translateY(-12px) scale(1.03);
+            border-color: rgba(255,255,255,.22);
+            box-shadow: 0 30px 60px rgba(0,0,0,.35);
+        }
+
+        /* Individual card colors */
+        .hk-1 { background: linear-gradient(145deg, #1a3a6e 0%, #0d2247 100%); }
+        .hk-1:hover { box-shadow: 0 30px 60px rgba(59,130,246,.25); }
+
+        .hk-2 { background: linear-gradient(145deg, #064e3b 0%, #022c22 100%); }
+        .hk-2:hover { box-shadow: 0 30px 60px rgba(16,185,129,.25); }
+
+        .hk-3 { background: linear-gradient(145deg, #78350f 0%, #451a03 100%); }
+        .hk-3:hover { box-shadow: 0 30px 60px rgba(245,158,11,.25); }
+
+        .hk-4 { background: linear-gradient(145deg, #4c1d95 0%, #2e1065 100%); }
+        .hk-4:hover { box-shadow: 0 30px 60px rgba(139,92,246,.25); }
+
+        .hub-ikon-wrap {
+            width: 88px;
+            height: 88px;
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.4rem;
+            transition: transform 0.38s cubic-bezier(0.34,1.56,0.64,1);
+            margin-bottom: .25rem;
+        }
+
+        .hub-kartu:hover .hub-ikon-wrap {
+            transform: scale(1.15) rotate(-4deg);
+        }
+
+        .hk-1 .hub-ikon-wrap { background: rgba(96,165,250,.2); color: #93c5fd; }
+        .hk-2 .hub-ikon-wrap { background: rgba(52,211,153,.2); color: #6ee7b7; }
+        .hk-3 .hub-ikon-wrap { background: rgba(251,191,36,.22); color: #fde68a; }
+        .hk-4 .hub-ikon-wrap { background: rgba(167,139,250,.22); color: #ddd6fe; }
+
+        .hub-kartu-nama {
+            font-size: 1.1rem;
+            font-weight: 800;
+            letter-spacing: .01em;
+            line-height: 1.25;
+        }
+
+        .hub-kartu-desc {
+            font-size: .82rem;
+            color: rgba(255,255,255,.58);
+            line-height: 1.65;
+        }
+
+        .hub-kartu-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: .45rem;
+            margin-top: .5rem;
+            font-size: .8rem;
+            font-weight: 700;
+            color: rgba(255,255,255,.55);
+            transition: color 0.25s, gap 0.25s;
+            letter-spacing: .03em;
+        }
+
+        .hub-kartu:hover .hub-kartu-cta {
+            color: rgba(255,255,255,.9);
+            gap: .7rem;
+        }
+
+        /* Quick nav strip below hub */
+        .hub-strip {
+            display: flex;
+            gap: .85rem;
+            margin-top: 2.8rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hub-strip-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: .5rem;
+            padding: .6rem 1.35rem;
+            border-radius: 50px;
+            background: rgba(255,255,255,.07);
+            border: 1px solid rgba(255,255,255,.12);
+            color: rgba(255,255,255,.75);
+            font-size: .84rem;
+            font-weight: 600;
+            cursor: pointer;
+            font-family: inherit;
+            text-decoration: none;
+            transition: all 0.25s;
+        }
+
+        .hub-strip-btn:hover {
+            background: rgba(255,255,255,.13);
+            border-color: rgba(255,255,255,.25);
+            color: #fff;
+            transform: translateY(-2px);
+        }
+
+        @media (max-width: 960px) {
+            .hub-grid { grid-template-columns: repeat(2, 1fr); }
+            .hub-page { justify-content: flex-start; padding-top: 4rem; }
+        }
+
+        @media (max-width: 560px) {
+            .hub-grid { grid-template-columns: 1fr 1fr; gap: 1rem; }
+            .hub-kartu { padding: 1.75rem 1.1rem 1.5rem; border-radius: 20px; }
+            .hub-ikon-wrap { width: 70px; height: 70px; font-size: 1.9rem; border-radius: 18px; }
+            .hub-kartu-nama { font-size: .95rem; }
+            .hub-kartu-desc { display: none; }
+            .hub-title { font-size: 1.9rem; }
+        }
     </style>
 </head>
 
@@ -1309,178 +1562,50 @@
     <div class="halaman aktif" id="halaman-beranda">
         <div class="konten">
 
-            <section class="hero">
-                <div class="hero-pola"></div>
-                <div class="hero-lingkaran lk1"></div>
-                <div class="hero-lingkaran lk2"></div>
-                <div class="hero-isi">
-                    <div class="tampil">
-                        <div class="hero-badge"><i class="fas fa-circle"></i> Tahun 2026 / 2027</div>
-                        <h1 class="hero-judul">KINERJA<br><em>MAN 6 JOMBANG</em></h1>
-                        <p class="hero-desc">
-                            Pusat pengelolaan SKP, unggah laporan, dan akses dokumen kinerja pegawai secara mudah dan
-                            terpusat.
-                        </p>
-                        <div class="hero-aksi">
-                            <button class="btn-utama" onclick="buktiHalaman('dokumen')">
-                                <i class="fas fa-folder-open"></i> Lihat Dokumen
-                            </button>
-                            <button class="btn-outline" onclick="buktiHalaman('unggah')">
-                                <i class="fas fa-cloud-arrow-up"></i> Unggah Laporan
-                            </button>
-                        </div>
-                    </div>
-                    <div class="hero-stats tampil" style="transition-delay:.15s">
-                        <div class="stat-kotak stat-biru">
-                            <div class="stat-ikon"><i class="fas fa-file-contract"></i></div>
-                            <div class="stat-angka">6</div>
-                            <div class="stat-label">Jenis Dokumen</div>
-                        </div>
-                        <div class="stat-kotak stat-hijau">
-                            <div class="stat-ikon"><i class="fas fa-cloud-arrow-up"></i></div>
-                            <div class="stat-angka">7</div>
-                            <div class="stat-label">Folder Unggah</div>
-                        </div>
-                        <div class="stat-kotak stat-kuning">
-                            <div class="stat-ikon"><i class="fas fa-calendar-check"></i></div>
-                            <div class="stat-angka">4</div>
-                            <div class="stat-label">SKP Triwulan</div>
-                        </div>
-                        <div class="stat-kotak stat-ungu">
-                            <div class="stat-ikon"><i class="fas fa-star"></i></div>
-                            <div class="stat-angka">2026</div>
-                            <div class="stat-label">Periode Aktif</div>
-                        </div>
-                    </div>
+            <section class="hub-page">
+                <div class="hub-blob hub-blob-1"></div>
+                <div class="hub-blob hub-blob-2"></div>
+                <div class="hub-blob hub-blob-3"></div>
+                <div class="hub-header tampil">
+                    <div class="hub-badge"><i class="fas fa-circle"></i> Tahun 2026 / 2027</div>
+                    <h1 class="hub-title">KINERJA<br><em>MAN 6 JOMBANG</em></h1>
+                    <p class="hub-sub">Pusat pengelolaan SKP, distribusi RHK, dan akses dokumen kinerja pegawai secara mudah dan terpusat.</p>
                 </div>
-            </section>
 
-            <div class="strip">
-                <div class="strip-dalam">
-                    <div class="strip-item"><i class="fas fa-check-circle"></i> Kontrak Kinerja 2026</div>
-                    <div class="strip-item"><i class="fas fa-check-circle"></i> SKP Triwulan 1 – 4</div>
-                    <div class="strip-item"><i class="fas fa-check-circle"></i> Bukti Dukung</div>
-                    <div class="strip-item"><i class="fas fa-check-circle"></i> Penilaian Kinerja</div>
-                    <div class="strip-item"><i class="fas fa-check-circle"></i> Distribusi RHK</div>
-                    <div class="strip-item"><i class="fas fa-check-circle"></i> Templat Laporan</div>
-                    <div class="strip-item"><i class="fas fa-check-circle"></i> Laporan Capaian Kinerja Bulanan 2026
-                    </div>
-                    <div class="strip-item"><i class="fas fa-check-circle"></i> Kontrak Kinerja 2026</div>
-                    <div class="strip-item"><i class="fas fa-check-circle"></i> SKP Triwulan 1 – 4</div>
-                    <div class="strip-item"><i class="fas fa-check-circle"></i> Bukti Dukung</div>
-                    <div class="strip-item"><i class="fas fa-check-circle"></i> Penilaian Kinerja</div>
-                    <div class="strip-item"><i class="fas fa-check-circle"></i> Distribusi RHK</div>
-                    <div class="strip-item"><i class="fas fa-check-circle"></i> Templat Laporan</div>
-                    <div class="strip-item"><i class="fas fa-check-circle"></i> Laporan Capaian Kinerja Bulanan 2026
-                    </div>
+                <div class="hub-grid">
+                    <a href="https://drive.google.com/drive/folders/1qpY7Y2gTSNZQ1UWNOELrZ0ENcujEbpTh?usp=drive_link" target="_blank" class="hub-kartu hk-1 tampil">
+                        <div class="hub-ikon-wrap"><i class="fas fa-file-contract"></i></div>
+                        <div class="hub-kartu-nama">PERKIN</div>
+                        <div class="hub-kartu-desc">Penilaian &amp; Kontrak Kinerja Pegawai 2026</div>
+                        <div class="hub-kartu-cta">Buka <i class="fas fa-arrow-right"></i></div>
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/14g-6TBj52WfkrGRfIcB8S34OCsG-w8te?usp=drive_link" target="_blank" class="hub-kartu hk-2 tampil" style="transition-delay:.08s">
+                        <div class="hub-ikon-wrap"><i class="fas fa-sitemap"></i></div>
+                        <div class="hub-kartu-nama">Distribusi RHK 2026</div>
+                        <div class="hub-kartu-desc">Rencana Hasil Kerja per jabatan &amp; unit kerja</div>
+                        <div class="hub-kartu-cta">Buka <i class="fas fa-arrow-right"></i></div>
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1ZfGiUPE-NKVAZpuXWkAgGQhm1p07-uAY?usp=drive_link" target="_blank" class="hub-kartu hk-3 tampil" style="transition-delay:.16s">
+                        <div class="hub-ikon-wrap"><i class="fas fa-copy"></i></div>
+                        <div class="hub-kartu-nama">Template Laporan</div>
+                        <div class="hub-kartu-desc">Format berkas kosong siap diisi sesuai standar resmi</div>
+                        <div class="hub-kartu-cta">Unduh <i class="fas fa-arrow-right"></i></div>
+                    </a>
+                    <a href="https://drive.google.com/drive/folders/1xyNRWxoq9t6amlwbp7o56fc9RRlVaC3J?usp=drive_link" target="_blank" class="hub-kartu hk-4 tampil" style="transition-delay:.24s">
+                        <div class="hub-ikon-wrap"><i class="fas fa-users"></i></div>
+                        <div class="hub-kartu-nama">Direktori Pegawai</div>
+                        <div class="hub-kartu-desc">Akses dokumen SKP &amp; berkas seluruh pegawai</div>
+                        <div class="hub-kartu-cta">Lihat <i class="fas fa-arrow-right"></i></div>
+                    </a>
                 </div>
-            </div>
 
-            <section>
-                <div class="tentang">
-                    <div class="tentang-teks tampil">
-                        <div class="label-seksi">Tentang Portal</div>
-                        <h2 class="judul-seksi" style="margin-bottom: 1.25rem;">Semua Dokumen Kinerja<br><span
-                                class="hl">di Satu Tempat</span></h2>
-                        <p style="margin-bottom: 0.85rem;">Portal Kinerja MAN 6 Jombang dirancang untuk mempermudah guru
-                            dan staf dalam mengakses, mengunduh templat administrasi, serta mengumpulkan dokumen
-                            pelaporan kinerja secara daring.</p>
-                        <p style="margin-bottom: 1.5rem;">Seluruh format berkas dan folder pengumpulan laporan telah
-                            ditata secara sistematis per periode untuk mendukung transparansi dan efisiensi administrasi
-                            sekolah.</p>
-                        <div class="fitur-list">
-                            <div class="fitur-item"><i class="fas fa-check"></i> Akses berkas kontrak kinerja dan
-                                formulir SKP resmi</div>
-                            <div class="fitur-item"><i class="fas fa-check"></i> Unggah langsung ke folder penyimpanan
-                                awan (cloud) sekolah</div>
-                            <div class="fitur-item"><i class="fas fa-check"></i> Distribusi Rencana Hasil Kerja (RHK)
-                                tertata per jabatan</div>
-                            <div class="fitur-item"><i class="fas fa-check"></i> Panduan dan jadwal periode triwulan
-                                yang terintegrasi</div>
-                        </div>
-                    </div>
-                    <div class="tampil" style="transition-delay:.12s">
-                        <div class="kartu-progress">
-                            <div class="kp-header">
-                                <div class="kp-ikon"><i class="fas fa-chart-line"></i></div>
-                                <div>
-                                    <h4>Capaian Kinerja 2026</h4>
-                                    <p>Ringkasan periode berjalan</p>
-                                </div>
-                            </div>
-                            <div class="prog-list">
-                                <div class="prog-baris">
-                                    <label><span>Kontrak Kinerja</span><span style="color:var(--hijau)">
-                                            Selesai</span></label>
-                                    <div class="prog-bar">
-                                        <div class="prog-isi" style="width:100%"></div>
-                                    </div>
-                                </div>
-                                <div class="prog-baris">
-                                    <label><span>SKP Triwulan 1</span><span style="color:var(--hijau)">
-                                            Selesai</span></label>
-                                    <div class="prog-bar">
-                                        <div class="prog-isi" style="width:100%"></div>
-                                    </div>
-                                </div>
-                                <div class="prog-baris">
-                                    <label><span>SKP Triwulan 2</span><span style="color:var(--kuning)">
-                                            Berjalan</span></label>
-                                    <div class="prog-bar">
-                                        <div class="prog-isi" style="width:65%"></div>
-                                    </div>
-                                </div>
-                                <div class="prog-baris">
-                                    <label><span>Laporan Capaian Kinerja Bulanan 2026</span><span
-                                            style="color:var(--kuning)"> Berjalan</span></label>
-                                    <div class="prog-bar">
-                                        <div class="prog-isi" style="width:50%"></div>
-                                    </div>
-                                </div>
-                                <div class="prog-baris">
-                                    <label><span>SKP Triwulan 3</span><span style="color:#94a3b8"> Belum
-                                            Mulai</span></label>
-                                    <div class="prog-bar">
-                                        <div class="prog-isi" style="width:0%"></div>
-                                    </div>
-                                </div>
-                                <div class="prog-baris">
-                                    <label><span>SKP Triwulan 4</span><span style="color:#94a3b8"> Belum
-                                            Mulai</span></label>
-                                    <div class="prog-bar">
-                                        <div class="prog-isi" style="width:0%"></div>
-                                    </div>
-                                </div>
-                                <div class="prog-baris">
-                                    <label><span>SKP Tahunan 2026</span><span style="color:#94a3b8"> Belum
-                                            Mulai</span></label>
-                                    <div class="prog-bar">
-                                        <div class="prog-isi" style="width:0%"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <section class="cta tampil" style="padding-top:2rem">
-                <div class="cta-kotak">
-                    <div class="cta-deko"></div>
-                    <div class="cta-teks" style="position:relative;z-index:1">
-                        <h3>Siap Mengumpulkan Laporan?</h3>
-                        <p>Klik Unggah Laporan dan pilih periode yang sesuai. Pastikan format berkas sudah menggunakan
-                            templat resmi.</p>
-                    </div>
-                    <div class="cta-aksi">
-                        <button class="btn-utama" onclick="buktiHalaman('unggah')">
-                            <i class="fas fa-cloud-arrow-up"></i> Unggah Laporan
-                        </button>
-                        <a href="https://drive.google.com/drive/folders/1ZfGiUPE-NKVAZpuXWkAgGQhm1p07-uAY?usp=drive_link"
-                            target="_blank" class="btn-outline" style="text-decoration: none;">
-                            <i class="fas fa-download"></i> Unduh Templat
-                        </a>
-                    </div>
+                <div class="hub-strip tampil" style="transition-delay:.3s">
+                    <button class="hub-strip-btn" onclick="buktiHalaman('dokumen')">
+                        <i class="fas fa-folder-open"></i> Semua Dokumen
+                    </button>
+                    <button class="hub-strip-btn" onclick="buktiHalaman('unggah')">
+                        <i class="fas fa-cloud-arrow-up"></i> Unggah Laporan
+                    </button>
                 </div>
             </section>
 
