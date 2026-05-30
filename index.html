@@ -1517,6 +1517,109 @@
             .hub-kartu-desc { display: none; }
             .hub-title { font-size: 1.9rem; }
         }
+
+        /* ===== DOKUMEN PANDUAN CARDS ===== */
+        .panduan-section {
+            margin-bottom: 3rem;
+        }
+
+        .panduan-section-header {
+            margin-bottom: 1.75rem;
+        }
+
+        .panduan-section-header h3 {
+            font-size: 1.3rem;
+            font-weight: 800;
+            color: var(--teks);
+            margin-bottom: .35rem;
+            letter-spacing: -0.01em;
+        }
+
+        .panduan-section-header p {
+            color: var(--abu-teks);
+            font-size: .88rem;
+        }
+
+        .panduan-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+        }
+
+        .panduan-kartu {
+            background: #fff;
+            border: 1.5px solid var(--abu-batas);
+            border-radius: 22px;
+            padding: 2.2rem 1.5rem 1.8rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1rem;
+            transition: all 0.32s cubic-bezier(0.4,0,0.2,1);
+            box-shadow: 0 4px 20px rgba(0,0,0,.04);
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .panduan-kartu:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 48px rgba(6,78,59,.1);
+            border-color: var(--hijau-pucat);
+        }
+
+        .panduan-ikon {
+            width: 110px;
+            height: 110px;
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            transition: transform 0.32s cubic-bezier(0.34,1.56,0.64,1);
+        }
+
+        .panduan-kartu:hover .panduan-ikon {
+            transform: scale(1.1) rotate(-5deg);
+        }
+
+        .panduan-nama {
+            font-size: 1rem;
+            font-weight: 800;
+            color: var(--teks);
+            letter-spacing: .04em;
+            text-transform: uppercase;
+        }
+
+        .panduan-link-label {
+            display: inline-flex;
+            align-items: center;
+            gap: .4rem;
+            font-size: .76rem;
+            color: var(--hijau);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: .05em;
+            border-bottom: 1.5px solid transparent;
+            transition: border-color 0.2s, gap 0.2s;
+            line-height: 1.5;
+            text-align: center;
+        }
+
+        .panduan-kartu:hover .panduan-link-label {
+            border-bottom-color: var(--hijau);
+            gap: .65rem;
+        }
+
+        .panduan-divider {
+            border: none;
+            border-top: 1.5px solid var(--abu-batas);
+            margin: 2.5rem 0;
+        }
+
+        @media (max-width: 700px) {
+            .panduan-grid { grid-template-columns: 1fr; }
+        }
     </style>
 </head>
 
@@ -1617,6 +1720,37 @@
     <div class="halaman" id="halaman-dokumen">
         <div class="konten">
             <div class="halaman-isi">
+
+                <!-- ===== SEKSI PANDUAN ===== -->
+                <div class="panduan-section tampil">
+                    <div class="panduan-section-header">
+                        <div class="label-seksi">Panduan</div>
+                        <h3>Dokumen Panduan</h3>
+                        <p>Panduan Penyusunan dokumen kinerja pegawai</p>
+                    </div>
+
+                    <div class="panduan-grid">
+                        <a href="https://drive.google.com/drive/folders/1rbbqYco_lwJUwY9w92DGWnTbpINz60Dx?usp=drive_link" target="_blank" class="panduan-kartu tampil">
+                            <div class="panduan-ikon ikon-teal"><i class="fas fa-file-signature"></i></div>
+                            <div class="panduan-nama">Kontrak Kinerja</div>
+                            <span class="panduan-link-label">Panduan Kontrak SKP <i class="fas fa-arrow-right" style="font-size:.65rem"></i></span>
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/1xyNRWxoq9t6amlwbp7o56fc9RRlVaC3J?usp=drive_link" target="_blank" class="panduan-kartu tampil" style="transition-delay:.08s">
+                            <div class="panduan-ikon ikon-biru"><i class="fas fa-list-check"></i></div>
+                            <div class="panduan-nama">SKP</div>
+                            <span class="panduan-link-label">Panduan Laporan SKP Triwulan dan Tahunan <i class="fas fa-arrow-right" style="font-size:.65rem"></i></span>
+                        </a>
+                        <a href="https://drive.google.com/drive/folders/1LiVtn9wyYlWQ0Aa8t9gEp_twdjpUL7PQ?usp=drive_link" target="_blank" class="panduan-kartu tampil" style="transition-delay:.16s">
+                            <div class="panduan-ikon ikon-oranye"><i class="fas fa-folder-open"></i></div>
+                            <div class="panduan-nama">Bukti Dukung</div>
+                            <span class="panduan-link-label">Lampiran Bukti Dukung <i class="fas fa-arrow-right" style="font-size:.65rem"></i></span>
+                        </a>
+                    </div>
+                </div>
+
+                <hr class="panduan-divider">
+
+                <!-- ===== SEKSI PUSTAKA ===== -->
                 <div class="halaman-header tampil">
                     <div class="label-seksi">Pustaka Digital</div>
                     <h2>Unduh Dokumen &amp; Templat Resmi</h2>
